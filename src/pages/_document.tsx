@@ -5,8 +5,7 @@ export default function Document() {
   const ScriptN = NextScript as any;
   return (
     <Html translate="no">
-      <HeadNext>
-      </HeadNext>
+      <HeadNext></HeadNext>
       <body>
         <Main />
         <ScriptN />

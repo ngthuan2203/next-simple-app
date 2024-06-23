@@ -41,17 +41,13 @@ export default function AppDialog({
   ...other
 }: ModalProps) {
   return (
-    <Dialog
-      open={open}
-      onClose={onClose}
-      
-    >
+    <Dialog open={open} onClose={onClose}>
       <DialogTitle alignContent={'center'}>
-        <Typography variant="h3" align="center" color='primary'>{title}</Typography>
-        </DialogTitle>
-      <DialogContent>
-          {children}
-      </DialogContent>
+        <Typography variant="h3" align="center" color="primary">
+          {title}
+        </Typography>
+      </DialogTitle>
+      <DialogContent>{children}</DialogContent>
     </Dialog>
   );
 }

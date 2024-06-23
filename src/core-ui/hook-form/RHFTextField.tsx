@@ -27,7 +27,7 @@ export default function RHFTextField({ name, helperText, size, ...other }: Props
           helperText={
             <FormHelperText
               error={!!error}
-              component='span'
+              component="span"
               sx={{
                 mx: 0,
                 mt: 0,

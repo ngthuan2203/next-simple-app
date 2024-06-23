@@ -1,7 +1,7 @@
 import { ThemeProvider } from '@mui/material';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import type { AppProps } from 'next/app';
-import {useState } from 'react';
+import { useState } from 'react';
 
 // CSS
 import '../assets/fonts/ubuntu/ubuntu.css';
@@ -37,26 +37,25 @@ export default function App({ Component, pageProps }: AppProps) {
     <>
       <ThemeProvider theme={baselightTheme}>
         <QueryClientProvider client={queryClient}>
-            <Head>
+          <Head>
             <link rel="shortcut icon" href="/next.svg" />
             <title>{t('app.title')}</title>
           </Head>
-            <ChildComponent {...pageProps} />
-            <ToastContainer
-              position="top-right"
-              autoClose={5000}
-              hideProgressBar={false}
-              newestOnTop={false}
-              closeOnClick
-              rtl={false}
-              pauseOnFocusLoss
-              draggable
-              pauseOnHover
-              theme="light"
-            />
+          <ChildComponent {...pageProps} />
+          <ToastContainer
+            position="top-right"
+            autoClose={5000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+            theme="light"
+          />
         </QueryClientProvider>
       </ThemeProvider>
     </>
-
   );
 }

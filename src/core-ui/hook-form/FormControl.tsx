@@ -18,21 +18,13 @@ type Props = {
   sx?: SxProps<Theme>;
 };
 
-export default function FormControl({
-  showSelected,
-  children,
-  label,
-  require,
-  name,
-  extendLabel,
-  sx
-}: Props) {
+export default function FormControl({ showSelected, children, label, require, name, extendLabel, sx }: Props) {
   const { watch } = useFormContext();
 
   return (
     <Box sx={sx}>
       <Typography
-        component='span'
+        component="span"
         sx={{
           color: 'text.secondary',
           fontWeight: 700,
@@ -44,18 +36,18 @@ export default function FormControl({
         {name && showSelected && watch(name)?.length > 0 && (
           <Typography
             display="inline-block"
-            component='span'
+            component="span"
             sx={{
               color: 'error.main'
             }}
           >
-            ({watch(name)?.length}) {' '}
+            ({watch(name)?.length}){' '}
           </Typography>
         )}
         {require && (
           <Typography
             display="inline-block"
-            component='span'
+            component="span"
             sx={{
               color: 'error.main'
             }}

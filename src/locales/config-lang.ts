@@ -1,7 +1,7 @@
 export const allLangs = [
   {
     label: 'lang.en',
-    value: 'en',
+    value: 'en'
   }
 ];
 

@@ -8,12 +8,14 @@ import { User } from '../types';
 function useUserEdit() {
   const { t } = useTranslation();
 
-  const {mutateAsync: createUser} = useUserCreateMutation();
+  const { mutateAsync: createUser } = useUserCreateMutation();
   const yupSchema = Yup.object().shape({
-    firstName: Yup.string().required(t('validation.require', {field: t('user.firstName')})),
-    lastName: Yup.string().required(t('validation.require', {field: t('user.lastName')})),
-    age: Yup.number().min(18, t('validation.min', {value: 18})).typeError(t('validation.number')),
-    nationality: Yup.string().required(t('validation.require', {field: t('user.nationality')}))
+    firstName: Yup.string().required(t('validation.require', { field: t('user.firstName') })),
+    lastName: Yup.string().required(t('validation.require', { field: t('user.lastName') })),
+    age: Yup.number()
+      .min(18, t('validation.min', { value: 18 }))
+      .typeError(t('validation.number')),
+    nationality: Yup.string().required(t('validation.require', { field: t('user.nationality') }))
   });
 
   const defaultValues = {
@@ -30,7 +32,7 @@ function useUserEdit() {
 
   const handleCreate = async () => {
     const data = methods.getValues();
-    await createUser({ user: data as User});
+    await createUser({ user: data as User });
   };
 
   return {

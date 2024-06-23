@@ -1,5 +1,5 @@
-import {JSXElementConstructor, ReactElement} from 'react';
-import {DialogProps } from '@mui/material';
+import { JSXElementConstructor, ReactElement } from 'react';
+import { DialogProps } from '@mui/material';
 
 export interface ModalProps extends DialogProps {
   width?: string | number;

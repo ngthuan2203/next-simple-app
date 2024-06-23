@@ -13,7 +13,7 @@ let lng = defaultLang.value;
 
 i18n.use(initReactI18next).init({
   resources: {
-    en: { translations: enLocales },
+    en: { translations: enLocales }
   },
   lng,
   fallbackLng: defaultLang.value,
