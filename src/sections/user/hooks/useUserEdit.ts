@@ -10,11 +10,13 @@ function useUserEdit() {
 
   const { mutateAsync: createUser } = useUserCreateMutation();
   const yupSchema = Yup.object().shape({
+    id: Yup.string(),
     firstName: Yup.string().required(t('validation.require', { field: t('user.firstName') })),
     lastName: Yup.string().required(t('validation.require', { field: t('user.lastName') })),
     age: Yup.number()
       .min(18, t('validation.min', { value: 18 }))
-      .typeError(t('validation.number')),
+      .typeError(t('validation.number'))
+      .required(t('validation.require', { field: t('user.age') })),
     nationality: Yup.string().required(t('validation.require', { field: t('user.nationality') }))
   });
 
@@ -24,9 +26,9 @@ function useUserEdit() {
     age: undefined,
     nationality: ''
   };
-  const methods = useForm({
+  const methods = useForm<User>({
     defaultValues: defaultValues,
-    resolver: yupResolver(yupSchema),
+    resolver: yupResolver<User>(yupSchema),
     mode: 'all'
   });
 

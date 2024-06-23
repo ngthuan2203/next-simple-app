@@ -1,4 +1,7 @@
 const en = {
+  app: {
+    title: 'App'
+  },
   user: {
     firstName: 'First name',
     lastName: 'Last name',
